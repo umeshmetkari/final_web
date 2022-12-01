@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  user: umeshansible
+  become: yes
+  tasks:
+    - name: Install git
+      apt:
+       name: git
+       state: latest
