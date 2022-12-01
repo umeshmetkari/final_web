@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: umweb
+spec:
+  selector:
+    matchLabels:
+      run: umweb
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: umweb
+    spec:
+      containers:
+      - name: umweb
+        image: umeshmetkari/finalweb:v1
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: umweb
+  labels:
+    run: umweb
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: umweb
+
+
+
+
