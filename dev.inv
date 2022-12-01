@@ -1,0 +1,2 @@
+[localhost]
+172.22.224.1 ansible_user=umeshansible
