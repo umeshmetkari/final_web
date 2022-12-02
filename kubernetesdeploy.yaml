@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: umweb
+  name: finalweb
 spec:
   selector:
     matchLabels:
-      run: umweb
+      run: finalweb
   replicas: 2
   template:
     metadata:
       labels:
-        run: umweb
+        run: finalweb
     spec:
       containers:
-      - name: umweb
+      - name: finalweb
         image: umeshmetkari/finalweb:v1
         ports:
         - containerPort: 80
@@ -23,15 +23,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: umweb
+  name: finalweb
   labels:
-    run: umweb
+    run: finalweb
 spec:
   ports:
   - port: 80
     protocol: TCP
   selector:
-    run: umweb
+    run: finalweb
 
 
 
