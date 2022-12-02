@@ -16,7 +16,7 @@ spec:
       - name: finalweb
         image: umeshmetkari/finalweb:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 
@@ -28,7 +28,7 @@ metadata:
     run: finalweb
 spec:
   ports:
-  - port: 80
+  - port: 8080
     protocol: TCP
   selector:
     run: finalweb
